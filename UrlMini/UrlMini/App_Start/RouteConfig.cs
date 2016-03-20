@@ -11,18 +11,32 @@ namespace UrlMini
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute(
-                name: "Redirect",
-                url: "{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Redirect",
+                url: "{shortCode}",
+                defaults: new { controller = "Home", action = "RedirectWithCode", shortCode = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Encode",
+                url: "Encoder",
+                defaults: new { controller = "Home", action = "Encoder" }
+            );
+
+
+
+            routes.MapRoute(
+                name: "BackEnd",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", id = UrlParameter.Optional }
             );
         }
     }

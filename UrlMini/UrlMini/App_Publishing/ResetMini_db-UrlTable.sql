@@ -57,6 +57,9 @@ PRINT N'Inserting Default Value into [dbo].[UrlTable]...';
 GO
 INSERT [dbo].[UrlTable] (Url)
 	SELECT 'https://home.stevenfarnell.net';
+INSERT [dbo].[UrlTable] (Url)
+	SELECT 'JUNK';
+DELETE FROM [dbo].[UrlTable] WHERE Url = 'JUNK'
 
 GO
 IF @@ERROR <> 0
@@ -89,3 +92,4 @@ PRINT N'Update complete.';
 
 
 GO
+SELECT * FROM [dbo].[UrlTable]

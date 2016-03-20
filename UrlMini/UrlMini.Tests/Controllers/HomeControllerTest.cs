@@ -19,20 +19,21 @@ namespace UrlMini.Tests.Controllers
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Index(null) as ViewResult;
+            ViewResult result = controller.Index() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void CallingIndexWithValidStringParameters()
+        public void CallingRedirectWithCodeUsingValidStringParameters()
         {
             // Arrange
             HomeController controller = new HomeController();
 
+            
             // Act
-            ViewResult result = controller.Index("1y5a") as ViewResult;
+            ViewResult result = controller.RedirectWithCode("1y5a") as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

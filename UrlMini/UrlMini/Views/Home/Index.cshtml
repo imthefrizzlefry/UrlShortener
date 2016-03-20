@@ -1,22 +1,37 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Url Mini Home";
+}
+@section scripts {
+    <script src="@Url.Content("~/Scripts/sendEncodeRequest.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    function encodeUrl() {
+        requestShortUrl($("#LongUrl").val(), '@Url.Action("codec", "api")', '#shorterURLResult', '#output');
+    }
+    </script>
 }
 
-<div class="jumbotron">
-    <h1>Url Mini</h1>
-    <p class="lead">Use this page to generate a code</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="row" style="padding-top: 30px;">
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <h1>Url Mini</h1>
+                <p style="font-weight: bold;">Paste your long URL here:</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        @Html.TextBox("LongUrl", null, new { @class = "form-control input-sm ", @placeholder = "Long URL" })
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary" onclick="encodeUrl()">Shorten URL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 well" id="output" style="display: none;">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="font-weight: bold;">Your shorter URL:</div>
+                <div class="panel-body">
+                    <span id="shorterURLResult" style="font-weight: bold; font-size: 16px;"></span>
+                </div>
+            </div>
+        </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Generate Short Code</h2>
-        <p></p><input type="text" size="60" /></p>
-        <p><a href="http://asp.net" class="btn btn-primary btn-lg">Generate Code &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Check Short Code</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a href="../api/codec/1y5a" class="btn btn-primary btn-lg">QuickTest</a></p>
-    </div>
- </div>

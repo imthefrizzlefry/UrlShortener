@@ -23,7 +23,7 @@ namespace UrlMini.Tests.Models
             string testInput = DataAccess.RetrieveUrl(1);
 
             //assert the deployed value is correct.
-            Assert.AreEqual("home.stevenfarnell.net", testInput);
+            Assert.AreEqual(@"https://home.stevenfarnell.net", testInput);
         }
 
         [TestMethod]

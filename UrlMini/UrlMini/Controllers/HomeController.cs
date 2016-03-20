@@ -12,7 +12,7 @@ namespace UrlMini.Controllers
 {
     public class HomeController : Controller
     {
-        private static string GetDecoderResponseAsString(string codecEndpoint)
+        private static string GetDecodedUrlAsString(string codecEndpoint)
         {
             // Create a WebRequest session to the endpoint
             WebRequest request = WebRequest.Create(codecEndpoint);
@@ -34,16 +34,8 @@ namespace UrlMini.Controllers
             return redirectUrl;
         }
 
-        public ActionResult Index(string id)
-        {
-            if (id != null)
-            {
-                string codecEndpoint = string.Format("{0}://{1}/api/codec/{2}", Request.Url.Scheme, Request.Url.Authority, id);
-                string redirectUrl = GetDecoderResponseAsString(codecEndpoint);
-                
-                return Redirect(redirectUrl);
-            }
-
+        public ActionResult Index()
+        {   
             return View();
         }
 
@@ -59,6 +51,22 @@ namespace UrlMini.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult RedirectWithCode(string shortCode)
+        {            
+            string codecEndpoint = string.Format("{0}://{1}/api/codec/{2}", Request.Url.Scheme, Request.Url.Authority, shortCode);
+            string redirectUrl = GetDecodedUrlAsString(codecEndpoint);
+
+            return Redirect(redirectUrl);
+        }
+
+        //[AllowAnonymous]
+        [HttpPost]
+        public ActionResult Encoder(string longUrl)
+        {
+            //if (string.IsNullOrEmpty(longUrl))
+                return Json(new { status = false, message = "Please provide URL" }, JsonRequestBehavior.AllowGet);
         }
     }
 }
