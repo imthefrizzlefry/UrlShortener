@@ -14,7 +14,7 @@ namespace UrlMini.Models
 
         public static string Encode(int i)
         {
-            if (i <= 0)
+            if (i <= 0 || i > 2147392738)
             {
                 return "Invalid";
             }
@@ -36,14 +36,32 @@ namespace UrlMini.Models
 
         public static int Decode(string codeString)
         {
+            int strLength = codeString.Length;
+            if (strLength < 4 || strLength > 6)
+            {
+                return -1;
+            }
+
             int i = 0;
 
             foreach (var curCharacter in codeString)
             {
-                i = (i * Base) + Alphabet.IndexOf(curCharacter);
+                int curIndex = Alphabet.IndexOf(curCharacter);
+                if(curIndex < 0)
+                {
+                    return -1;
+                }
+                i = (i * Base) + curIndex;
             }
 
-            return i - Offset;
+            int returnValue = i - Offset;
+
+            if (returnValue <= 0 || returnValue > 2147392738)
+            {
+                return -1;
+            }
+
+                return returnValue;
         }
     }
 }

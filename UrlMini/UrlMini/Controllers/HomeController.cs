@@ -12,6 +12,8 @@ namespace UrlMini.Controllers
 {
     public class HomeController : Controller
     {
+        private string _message;
+
         private static string GetDecodedUrlAsString(string codecEndpoint)
         {
             // Create a WebRequest session to the endpoint
@@ -48,15 +50,25 @@ namespace UrlMini.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult NotFound()
+        {
+            ViewBag.Message = _message;
             return View();
         }
 
         public ActionResult RedirectWithCode(string shortCode)
-        {            
+        {
             string codecEndpoint = string.Format("{0}://{1}/api/codec/{2}", Request.Url.Scheme, Request.Url.Authority, shortCode);
             string redirectUrl = GetDecodedUrlAsString(codecEndpoint);
+
+            if (redirectUrl == "NotFound")
+            {
+                _message = "There was a problem: " + redirectUrl;
+                return RedirectToAction("NotFound", "Home");
+            }
 
             return Redirect(redirectUrl);
         }
