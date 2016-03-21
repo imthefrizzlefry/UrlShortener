@@ -101,7 +101,7 @@ namespace UrlMiniUITests.Steps
             string shortCode = ScenarioContext.Current["ShortCode"].ToString();
             string shortUrl = string.Format("{0}/{1}", baseAddress, shortCode);
 
-            DriverUtils.NavigateToUrl(driver, shortUrl);    
+            DriverUtils.NavigateToUrl(driver, shortUrl, 100);    
         }
 
         #endregion
@@ -177,9 +177,8 @@ namespace UrlMiniUITests.Steps
             Assert.IsTrue(isButtonDisabled, "The Shorten Url Button should be disabled, but is not.");
         }
 
-
-        [Then(@"the user is redirected to the error page")]
-        public void ThenTheUserIsRedirectedToTheErrorPage()
+        [Then(@"the user is redirected to the '(.*)' error page")]
+        public void ThenTheUserIsRedirectedToTheErrorPage(string expectedTitle)
         {
             //retrieve values from Scenario Context
             IWebDriver driver = (IWebDriver)ScenarioContext.Current["DriverSession"];
@@ -188,9 +187,15 @@ namespace UrlMiniUITests.Steps
 
             string actualMessage = DriverUtils.GetElementText(driver, NotFoundView.NotFoundMessage);
             string expectedMessage = "Code Not Found!";
+            string actualTitle = DriverUtils.GetCurrentPageTitle(driver);
 
-            Assert.AreEqual(expectedUrl, actualUrl, "The Not Found Url is not correct.");
-            Assert.AreEqual(expectedMessage, actualMessage, "The Not Found Message was not found.");            
+            Assert.IsTrue(actualTitle.Contains(expectedTitle), "The Page title does not include " + expectedTitle);
+
+            if (expectedTitle == "Not Found")
+            {
+                Assert.AreEqual(expectedUrl, actualUrl, "The Not Found Url is not correct.");
+                Assert.AreEqual(expectedMessage, actualMessage, "The Not Found Message was not found.");
+            }
         }
 
         #endregion

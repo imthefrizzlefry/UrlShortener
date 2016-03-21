@@ -22,7 +22,51 @@ Scenario: short-codes can be converted back into URLs
 	Then the codec service returns the URL 'home.stevenfarnell.net'
 
 
-Scenario: short-codes that don't exist return No rows found
+Scenario: short-codes that don't exist return NotFound
 	Given A user wants to retrieve a URL from a 'za1y5a'
 	When the requesting service submits a GET request is send for the short-code
 	Then the codec service returns the URL 'NotFound'
+
+Scenario Outline: short-codes that are invalid return NotFound Page
+	Given A user wants to retrieve a URL from a '<code>'
+	When the requesting service submits a GET request is send for the short-code
+	Then the codec service returns the URL 'NotFound'
+	Examples: 
+	| code   |
+	| ag4j!  |
+	| asd-b  |
+	| zzzA   |
+	| hhh}j  |
+	| aBc3ff |
+	| `fbse  |	
+	| 'gwno  |
+	| $bdf   |
+	| -bar   |
+	| foO    | 
+
+
+Scenario Outline: short-codes that contain escape characters return a 405 Error
+	Given A user wants to retrieve a URL from a '<code>'
+	When the requesting service submits a GET request is send for the short-code
+	Then the codec service returns the URL '(405) Method Not Allowed'
+	Examples: 
+	| code  |
+	| ?hopd |
+	
+
+Scenario Outline: short-codes that contain special characters return 404 Error
+	Given A user wants to retrieve a URL from a '<code>'
+	When the requesting service submits a GET request is send for the short-code
+	Then the codec service returns the URL '(404) Not Found'
+	Examples: 
+	| code  |
+	| bs+4d |
+	| ho/pd |
+
+Scenario Outline: short-codes that contain special characters return 400 Error
+	Given A user wants to retrieve a URL from a '<code>'
+	When the requesting service submits a GET request is send for the short-code
+	Then the codec service returns the URL '(400) Bad Request'
+	Examples: 
+	| code  |
+	| da&fb |

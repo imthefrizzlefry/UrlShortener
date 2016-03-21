@@ -142,12 +142,12 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that don\'t exist return No rows found")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that don\'t exist return NotFound")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
-        public virtual void Short_CodesThatDonTExistReturnNoRowsFound()
+        public virtual void Short_CodesThatDonTExistReturnNotFound()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("short-codes that don\'t exist return No rows found", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("short-codes that don\'t exist return NotFound", ((string[])(null)));
 #line 25
 this.ScenarioSetup(scenarioInfo);
 #line 26
@@ -158,6 +158,234 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("the codec service returns the URL \'NotFound\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage(string code, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("short-codes that are invalid return NotFound Page", exampleTags);
+#line 30
+this.ScenarioSetup(scenarioInfo);
+#line 31
+ testRunner.Given(string.Format("A user wants to retrieve a URL from a \'{0}\'", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 32
+ testRunner.When("the requesting service submits a GET request is send for the short-code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.Then("the codec service returns the URL \'NotFound\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: ag4j!")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ag4j!")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "ag4j!")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_Ag4J()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("ag4j!", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: asd-b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "asd-b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "asd-b")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_Asd_B()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("asd-b", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: zzzA")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "zzzA")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "zzzA")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_ZzzA()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("zzzA", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: hhh}j")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "hhh}j")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "hhh}j")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_HhhJ()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("hhh}j", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: aBc3ff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "aBc3ff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "aBc3ff")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_ABc3Ff()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("aBc3ff", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: `fbse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "`fbse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "`fbse")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_Fbse()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("`fbse", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: \'gwno")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\'gwno")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "\'gwno")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_Gwno()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("\'gwno", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: $bdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "$bdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "$bdf")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_Bdf()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("$bdf", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: -bar")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "-bar")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "-bar")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_Bar()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("-bar", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that are invalid return NotFound Page: foO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "foO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "foO")]
+        public virtual void Short_CodesThatAreInvalidReturnNotFoundPage_FoO()
+        {
+            this.Short_CodesThatAreInvalidReturnNotFoundPage("foO", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void Short_CodesThatContainEscapeCharactersReturnA405Error(string code, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("short-codes that contain escape characters return a 405 Error", exampleTags);
+#line 48
+this.ScenarioSetup(scenarioInfo);
+#line 49
+ testRunner.Given(string.Format("A user wants to retrieve a URL from a \'{0}\'", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 50
+ testRunner.When("the requesting service submits a GET request is send for the short-code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.Then("the codec service returns the URL \'(405) Method Not Allowed\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that contain escape characters return a 405 Error: ?hopd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "?hopd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "?hopd")]
+        public virtual void Short_CodesThatContainEscapeCharactersReturnA405Error_Hopd()
+        {
+            this.Short_CodesThatContainEscapeCharactersReturnA405Error("?hopd", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void Short_CodesThatContainSpecialCharactersReturn404Error(string code, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("short-codes that contain special characters return 404 Error", exampleTags);
+#line 57
+this.ScenarioSetup(scenarioInfo);
+#line 58
+ testRunner.Given(string.Format("A user wants to retrieve a URL from a \'{0}\'", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 59
+ testRunner.When("the requesting service submits a GET request is send for the short-code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.Then("the codec service returns the URL \'(404) Not Found\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that contain special characters return 404 Error: bs+4d")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "bs+4d")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "bs+4d")]
+        public virtual void Short_CodesThatContainSpecialCharactersReturn404Error_Bs4D()
+        {
+            this.Short_CodesThatContainSpecialCharactersReturn404Error("bs+4d", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that contain special characters return 404 Error: ho/pd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ho/pd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "ho/pd")]
+        public virtual void Short_CodesThatContainSpecialCharactersReturn404Error_HoPd()
+        {
+            this.Short_CodesThatContainSpecialCharactersReturn404Error("ho/pd", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void Short_CodesThatContainSpecialCharactersReturn400Error(string code, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("short-codes that contain special characters return 400 Error", exampleTags);
+#line 66
+this.ScenarioSetup(scenarioInfo);
+#line 67
+ testRunner.Given(string.Format("A user wants to retrieve a URL from a \'{0}\'", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 68
+ testRunner.When("the requesting service submits a GET request is send for the short-code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 69
+ testRunner.Then("the codec service returns the URL \'(400) Bad Request\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("short-codes that contain special characters return 400 Error: da&fb")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "UrlCodec")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ApiAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "da&fb")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "da&fb")]
+        public virtual void Short_CodesThatContainSpecialCharactersReturn400Error_DaFb()
+        {
+            this.Short_CodesThatContainSpecialCharactersReturn400Error("da&fb", ((string[])(null)));
+#line hidden
         }
     }
 }

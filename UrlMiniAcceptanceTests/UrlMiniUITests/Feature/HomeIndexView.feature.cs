@@ -233,27 +233,206 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
         }
         
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink(string code, string errorType, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Negative"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user receives a graceful error when they attempt to load an invalid shortlink" +
+                    "", @__tags);
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line 46
+ testRunner.Given(string.Format("the user has a short-code \'{0}\'", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 47
+ testRunner.When("the user attempts to navigate to the short-code Url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+ testRunner.Then(string.Format("the user is redirected to the \'{0}\' error page", errorType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user is given a graceful error when they attempt to load an invalid shortlink" +
-            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": 1y5b")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
-        public virtual void TheUserIsGivenAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "1y5b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "1y5b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_1Y5B()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is given a graceful error when they attempt to load an invalid shortlink" +
-                    "", new string[] {
-                        "Negative"});
-#line 39
-this.ScenarioSetup(scenarioInfo);
-#line 40
- testRunner.Given("the user has a short-code \'1y5b\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
- testRunner.When("the user attempts to navigate to the short-code Url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
- testRunner.Then("the user is redirected to the error page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("1y5b", "Not Found", ((string[])(null)));
 #line hidden
-            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": ag4j!")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ag4j!")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "ag4j!")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Ag4J()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("ag4j!", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": asd-b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "asd-b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "asd-b")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Asd_B()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("asd-b", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": zzzA")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "zzzA")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "zzzA")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_ZzzA()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("zzzA", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": hhh}j")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "hhh}j")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "hhh}j")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_HhhJ()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("hhh}j", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": aBc3ff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "aBc3ff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "aBc3ff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_ABc3Ff()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("aBc3ff", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": `fbse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "`fbse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "`fbse")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Fbse()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("`fbse", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": \'gwno")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\'gwno")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "\'gwno")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Gwno()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("\'gwno", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": $bdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "$bdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "$bdf")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Bdf()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("$bdf", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": -bar")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "-bar")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "-bar")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Bar()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("-bar", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": foO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "foO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "foO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_FoO()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("foO", "Not Found", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user receives a graceful error when they attempt to load an invalid shortlink" +
+            ": abcdefg")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Negative")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "abcdefg")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:code", "abcdefg")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ErrorType", "Not Found")]
+        public virtual void TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink_Abcdefg()
+        {
+            this.TheUserReceivesAGracefulErrorWhenTheyAttemptToLoadAnInvalidShortlink("abcdefg", "Not Found", ((string[])(null)));
+#line hidden
         }
     }
 }

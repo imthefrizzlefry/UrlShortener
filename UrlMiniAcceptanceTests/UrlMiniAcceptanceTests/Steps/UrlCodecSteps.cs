@@ -1,15 +1,12 @@
 ﻿using System;
 using TechTalk.SpecFlow;
-using UrlMiniAcceptanceTests.CodecApiTests.TestFramework.Models;
+using CommonFramework;
 using System.Net.Http;
 using System.Configuration;
-using Newtonsoft.Json;
-using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
-using CommonFramework;
 
 namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
 {
@@ -135,10 +132,17 @@ namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
 
             //retrieve shortcode from Scenario Context
             string codecEndpoint = "api/codec/" + ScenarioContext.Current["ShortCode"].ToString();
+            string decoderResponse = "";
 
-            // get the response from service as a string
-            string decoderResponse = GetDecoderResponseAsString(codecEndpoint);
-            
+            try
+            {
+                // get the response from service as a string
+                decoderResponse = GetDecoderResponseAsString(codecEndpoint);
+            }
+            catch(WebException e)
+            {
+                decoderResponse = e.Message;
+            }
 
             //store response into ScenarioContext
             ScenarioContext.Current.Add("DecoderResponse", decoderResponse);
@@ -183,7 +187,8 @@ namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
             Assert.IsTrue(responseContent.Contains(statusMessage), "FAILED: An incorrect response content was returned: " + responseContent);
                         
         }
-                            
+              
+                      
         [Then(@"the codec service returns the URL '(.*)'")]
         public void ThenTheCodecServiceReturnsTheURL(string urlRequested)
         {
@@ -191,7 +196,6 @@ namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
 
             Assert.IsTrue(responseContent.Contains(urlRequested), "FAILED: An incorrect response content was returned: " + responseContent);
         }
-
         #endregion
 
     }

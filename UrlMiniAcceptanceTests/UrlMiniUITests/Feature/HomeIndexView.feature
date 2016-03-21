@@ -35,8 +35,34 @@ Scenario Outline: The user is not able to submit an invalid URL
 	| https:// no spaces   |
 	| ftp://unsupportedUrl |
 
+#@Negative
+#Scenario: The user is given a graceful error when they attempt to load an invalid shortlink
+#	Given the user has a short-code '1y5b'
+#	When the user attempts to navigate to the short-code Url
+#	Then the user is redirected to the '' error page
+
 @Negative
-Scenario: The user is given a graceful error when they attempt to load an invalid shortlink
-	Given the user has a short-code '1y5b'
+Scenario Outline: The user receives a graceful error when they attempt to load an invalid shortlink
+	Given the user has a short-code '<code>'
 	When the user attempts to navigate to the short-code Url
-	Then the user is redirected to the error page
+	Then the user is redirected to the '<ErrorType>' error page
+	Examples: 
+	| code    | ErrorType                     |
+	| 1y5b    | Not Found                     |
+	| ag4j!   | Not Found                     |
+	| asd-b   | Not Found                     |
+	| zzzA    | Not Found                     |
+	| hhh}j   | Not Found                     |
+	| aBc3ff  | Not Found                     |
+	| `fbse   | Not Found                     |
+	| 'gwno   | Not Found                     |
+	| $bdf    | Not Found                     |
+	| -bar    | Not Found                     |
+	| foO     | Not Found                     |
+	| abcdefg | Not Found                     |
+
+#These Scenarios are ignored because they are handled by IIS and Azure:
+#	| da&fb   | A potentially dangerous Path  |
+#	| bs+4d   | Error - 404.11 - Not Found    |
+#	| ho/pd   | The resource cannot be found. |
+#	| ?hopd   |

@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -45,12 +46,14 @@ namespace UrlMiniUITests.TestFramework
                 case "Firefox":
                     driver = new FirefoxDriver();
                     break;
-                case "Chrome":
-                    
-                    driver = new ChromeDriver(@"C:\Program Files (x86)\chromedriver_win32");
+                case "Chrome":                    
+                    driver = new ChromeDriver(@".\Binaries"); //@"C:\Program Files (x86)\webDrivers"
                     break;
                 case "IE":
-                    driver = new InternetExplorerDriver(@"C:\Program Files (x86)\IEDriverServer_Win32");
+                    driver = new InternetExplorerDriver(@".\Binaries"); //@"C:\Program Files (x86)\IEDriverServer_Win32"
+                    break;
+                case "Edge":
+                    driver = new EdgeDriver(@".\Binaries"); //@"C:\Program Files (x86)\IEDriverServer_Win32"
                     break;
                 case "auto_UnitBrowser":
                     driver = new RemoteWebDriver(DesiredCapabilities.HtmlUnitWithJavaScript());
@@ -89,7 +92,7 @@ namespace UrlMiniUITests.TestFramework
             return (disabledStatus == "true");
         }
 
-        internal static void NavigateToUrl(IWebDriver driver, string destination, int waitDuration = 50)
+        internal static void NavigateToUrl(IWebDriver driver, string destination, int waitDuration = 90)
         {
             driver.Navigate().GoToUrl(destination);
 
@@ -113,6 +116,12 @@ namespace UrlMiniUITests.TestFramework
             Thread.Sleep(waitDuration);
 
             return driver.FindElement(element).Text;
+        }
+
+        internal static string GetCurrentPageTitle(IWebDriver driver, int waitDuration = 90)
+        {
+            Thread.Sleep(waitDuration);
+            return driver.Title;
         }
     }
 }
