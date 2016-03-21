@@ -26,20 +26,6 @@ namespace UrlMini.Tests.Controllers
         }
 
         [TestMethod]
-        public void CallingRedirectWithCodeUsingValidStringParameters()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            
-            // Act
-            ViewResult result = controller.RedirectWithCode("1y5a") as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
-        [TestMethod]
         public void About()
         {
             // Arrange

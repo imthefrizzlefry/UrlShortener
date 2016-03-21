@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UrlMini.Models;
+using UrlMini.Tests.TestFramework;
 
 namespace UrlMini.Tests.Models
 {
