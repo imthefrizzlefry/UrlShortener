@@ -9,6 +9,7 @@ using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
+using CommonFramework;
 
 namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
 {
@@ -17,17 +18,7 @@ namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
     {
         #region Private Methods        
 
-        private string ProcessUrlPassedByFeature(string requestedUrl)
-        {      
-            //insert a timestamp to make test entry unique      
-            if(requestedUrl.Contains("<TIMESTAMP>"))
-            {
-                string currentTime = DateTime.Now.ToString("yyyyMMddHHMM");
-                requestedUrl = requestedUrl.Replace("<TIMESTAMP>", currentTime);
-            }
-
-            return requestedUrl;
-        }
+        
 
         private static string GetDecoderResponseAsString(string codecEndpoint)
         {
@@ -118,7 +109,7 @@ namespace UrlMiniAcceptanceTests.CodecApiTests.Steps
         public void GivenAUserWantsToEncodeA(string requestedUrl)
         {
             // Process the Url Passed by the user:
-            requestedUrl = ProcessUrlPassedByFeature(requestedUrl);
+            requestedUrl = CommonMethods.ProcessUrlPassedByFeature(requestedUrl);
 
             //Store Requested URL into scenario context
             ScenarioContext.Current.Add("RequestedUrl", requestedUrl);

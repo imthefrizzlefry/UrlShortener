@@ -155,7 +155,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.When("the requesting service submits a GET request is send for the short-code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.Then("the codec service returns the URL \'No rows found\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the codec service returns the URL \'NotFound\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

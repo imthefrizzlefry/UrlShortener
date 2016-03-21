@@ -25,4 +25,4 @@ Scenario: short-codes can be converted back into URLs
 Scenario: short-codes that don't exist return No rows found
 	Given A user wants to retrieve a URL from a 'za1y5a'
 	When the requesting service submits a GET request is send for the short-code
-	Then the codec service returns the URL 'No rows found'
+	Then the codec service returns the URL 'NotFound'
