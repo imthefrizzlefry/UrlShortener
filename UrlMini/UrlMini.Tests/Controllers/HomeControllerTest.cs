@@ -61,27 +61,27 @@ namespace UrlMini.Tests.Controllers
             string shortCode = "1y5a";
             string expectedAPIEndpoint = string.Format("{0}api/codec/{1}", ConfigurationManager.AppSettings["ClientBaseAddress"].ToString(), shortCode);
 
-            mockController.Setup(x => x.GetDecodedUrlAsString(expectedAPIEndpoint)).Returns("valid");
+            mockController.Setup(x => x.GetDecodedUrlAsString(It.IsIn<string>(expectedAPIEndpoint))).Returns<string>(x => { return "valid"; });
 
             //mockController.
-            var result = mockController.Object.WithCallTo(x => x.RedirectWithCode(""));
+            var result = mockController.Object.WithCallTo(x => x.RedirectWithCode(shortCode));
+
             Assert.AreEqual(result.ActionName, "RedirectWithCode", "The expected Action was not returned.");
         }
 
-        //[TestMethod]
-        //public void RedirectWithinValidCode()
-        //{
-        //    // Arrange
-        //    var mockController = new Mock<HomeController>();
-        //    string shortCode = "1y5b";
-        //    string expectedAPIEndpoint = string.Format("{0}api/codec/{1}", ConfigurationManager.AppSettings["ClientBaseAddress"].ToString(), shortCode);
+        [TestMethod]
+        public void RedirectWithinValidCode()
+        {
+            // Arrange
+            var mockController = new Mock<HomeController>();
+            string shortCode = "1y5b";
+            
+            mockController.Setup(x => x.GetDecodedUrlAsString(It.IsAny<string>())).Returns<string>(x => { return "NotFound"; });
 
-        //    mockController.Setup(x => x.GetDecodedUrlAsString(expectedAPIEndpoint)).Returns("NotFound");
-
-        //    //mockController.
-        //    var result = mockController.Object.WithCallTo(x => x.RedirectWithCode("")).ShouldRedirectToRoute("NotFound");
-        //    //Assert.AreEqual(result.ActionName, "RedirectWithCode", "The expected Action was not returned.");
-        //}
+            //mockController.
+            var result = mockController.Object.WithCallTo(x => x.RedirectWithCode(shortCode));
+            Assert.AreEqual(result.ActionName, "RedirectWithCode", "The expected Action was not returned.");
+        }
 
 
 
