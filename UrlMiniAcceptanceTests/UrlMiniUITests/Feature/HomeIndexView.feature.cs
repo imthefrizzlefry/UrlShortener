@@ -96,15 +96,29 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user obtains a short code when they submit a valid URL: https://home.stevenfa" +
-            "rnell.net/<TIMESTAMP>")]
+            "rnell.net/")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("HappyPath")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "https://home.stevenfarnell.net/<TIMESTAMP>")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:url", "https://home.stevenfarnell.net/<TIMESTAMP>")]
-        public virtual void TheUserObtainsAShortCodeWhenTheySubmitAValidURL_HttpsHome_Stevenfarnell_NetTIMESTAMP()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "https://home.stevenfarnell.net/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:url", "https://home.stevenfarnell.net/")]
+        public virtual void TheUserObtainsAShortCodeWhenTheySubmitAValidURL_HttpsHome_Stevenfarnell_Net()
         {
-            this.TheUserObtainsAShortCodeWhenTheySubmitAValidURL("https://home.stevenfarnell.net/<TIMESTAMP>", ((string[])(null)));
+            this.TheUserObtainsAShortCodeWhenTheySubmitAValidURL("https://home.stevenfarnell.net/", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user obtains a short code when they submit a valid URL: http://home.stevenfar" +
+            "nell.net/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("HappyPath")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "http://home.stevenfarnell.net/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:url", "http://home.stevenfarnell.net/")]
+        public virtual void TheUserObtainsAShortCodeWhenTheySubmitAValidURL_HttpHome_Stevenfarnell_Net()
+        {
+            this.TheUserObtainsAShortCodeWhenTheySubmitAValidURL("http://home.stevenfarnell.net/", ((string[])(null)));
 #line hidden
         }
         
@@ -127,6 +141,52 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user obtains a short code when they submit a valid URL: http://www.google.com" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("HappyPath")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "http://www.google.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:url", "http://www.google.com")]
+        public virtual void TheUserObtainsAShortCodeWhenTheySubmitAValidURL_HttpWww_Google_Com()
+        {
+            this.TheUserObtainsAShortCodeWhenTheySubmitAValidURL("http://www.google.com", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user obtains a short code when they submit a valid URL: HTTPS://www.google.co" +
+            "m/webhp?sourceid=chrome-instant&ion=1&espv=2&es_th=1&ie=UTF-8#q=test%20search%20" +
+            "terms%20<TIMESTAMP>")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("HappyPath")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "HTTPS://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&es_th=1&ie=UTF-" +
+            "8#q=test%20search%20terms%20<TIMESTAMP>")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:url", "HTTPS://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&es_th=1&ie=UTF-" +
+            "8#q=test%20search%20terms%20<TIMESTAMP>")]
+        public virtual void TheUserObtainsAShortCodeWhenTheySubmitAValidURL_HTTPSWww_Google_ComWebhpSourceidChrome_InstantIon1Espv2Es_Th1IeUTF_8QTest20Search20Terms20TIMESTAMP()
+        {
+            this.TheUserObtainsAShortCodeWhenTheySubmitAValidURL("HTTPS://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&es_th=1&ie=UTF-" +
+                    "8#q=test%20search%20terms%20<TIMESTAMP>", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user obtains a short code when they submit a valid URL: HTTP://home.stevenfar" +
+            "nell.net")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("HappyPath")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "HTTP://home.stevenfarnell.net")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:url", "HTTP://home.stevenfarnell.net")]
+        public virtual void TheUserObtainsAShortCodeWhenTheySubmitAValidURL_HTTPHome_Stevenfarnell_Net()
+        {
+            this.TheUserObtainsAShortCodeWhenTheySubmitAValidURL("HTTP://home.stevenfarnell.net", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("The user is redirected to the desired page when they load the shortlink")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "HomeIndexView")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("UIAcceptanceTests")]
@@ -135,13 +195,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is redirected to the desired page when they load the shortlink", new string[] {
                         "HappyPath"});
-#line 20
+#line 25
 this.ScenarioSetup(scenarioInfo);
-#line 21
+#line 26
  testRunner.Given("the user has a short-code \'1y5a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
+#line 27
  testRunner.When("the user attempts to navigate to the short-code Url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 28
  testRunner.Then("the user is redirected to the \'https://home.stevenfarnell.net/\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -156,13 +216,13 @@ this.ScenarioSetup(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is not able to submit an invalid URL", @__tags);
-#line 26
+#line 31
 this.ScenarioSetup(scenarioInfo);
-#line 27
+#line 32
  testRunner.Given(string.Format("the user has a invalid URL \'{0}\' that they want to have shortened", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
+#line 33
  testRunner.When("the user navigates to the home page and enters a URL to shorten", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
+#line 34
  testRunner.Then("the Shorten URL button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -243,13 +303,13 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user receives a graceful error when they attempt to load an invalid shortlink" +
                     "", @__tags);
-#line 45
+#line 50
 this.ScenarioSetup(scenarioInfo);
-#line 46
+#line 51
  testRunner.Given(string.Format("the user has a short-code \'{0}\'", code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 47
+#line 52
  testRunner.When("the user attempts to navigate to the short-code Url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 53
  testRunner.Then(string.Format("the user is redirected to the \'{0}\' error page", errorType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

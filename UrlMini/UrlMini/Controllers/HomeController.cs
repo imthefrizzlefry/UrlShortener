@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,7 +15,7 @@ namespace UrlMini.Controllers
     {
         private string _message;
 
-        private static string GetDecodedUrlAsString(string codecEndpoint)
+        public virtual string GetDecodedUrlAsString(string codecEndpoint)
         {
             // Create a WebRequest session to the endpoint
             WebRequest request = WebRequest.Create(codecEndpoint);
@@ -61,7 +62,7 @@ namespace UrlMini.Controllers
 
         public ActionResult RedirectWithCode(string shortCode)
         {
-            string codecEndpoint = string.Format("{0}://{1}/api/codec/{2}", Request.Url.Scheme, Request.Url.Authority, shortCode);
+            string codecEndpoint = string.Format("{0}api/codec/{1}", ConfigurationManager.AppSettings["ClientBaseAddress"].ToString(), shortCode);
             string redirectUrl = GetDecodedUrlAsString(codecEndpoint);
 
             if (redirectUrl == "NotFound")
@@ -71,14 +72,7 @@ namespace UrlMini.Controllers
             }
 
             return Redirect(redirectUrl);
-        }
+         }
 
-        //[AllowAnonymous]
-        [HttpPost]
-        public ActionResult Encoder(string longUrl)
-        {
-            //if (string.IsNullOrEmpty(longUrl))
-                return Json(new { status = false, message = "Please provide URL" }, JsonRequestBehavior.AllowGet);
-        }
     }
 }

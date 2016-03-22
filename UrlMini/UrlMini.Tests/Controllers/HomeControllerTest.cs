@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UrlMini;
 using UrlMini.Controllers;
+using TestStack.FluentMVCTesting;
+using UrlMini.Tests.TestFramework;
+using System.Web.Routing;
+using System.Web;
+using Moq;
+using System.Configuration;
 
 namespace UrlMini.Tests.Controllers
 {
@@ -13,16 +14,14 @@ namespace UrlMini.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void CallingIndexWithNullParameters()
+        public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            var controller = new HomeController();
 
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
+            var result = controller.WithCallTo(x => x.Index()).ShouldRenderDefaultView();
+            
 
-            // Assert
-            Assert.IsNotNull(result);
         }
 
         [TestMethod]
@@ -32,10 +31,7 @@ namespace UrlMini.Tests.Controllers
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            var result = controller.WithCallTo(x => x.About()).ShouldRenderDefaultView();
         }
 
         [TestMethod]
@@ -44,11 +40,50 @@ namespace UrlMini.Tests.Controllers
             // Arrange
             HomeController controller = new HomeController();
 
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
+            var result = controller.WithCallTo(x => x.Contact()).ShouldRenderDefaultView();
         }
+
+        [TestMethod]
+        public void NotFound()
+        {
+            // Arrange
+            var controller = new HomeController();
+
+            var result = controller.WithCallTo(x => x.NotFound()).ShouldRenderDefaultView();
+            
+        }
+
+        [TestMethod]
+        public void RedirectWithValidCode()
+        {
+            // Arrange
+            var mockController = new Mock<HomeController>();
+            string shortCode = "1y5a";
+            string expectedAPIEndpoint = string.Format("{0}api/codec/{1}", ConfigurationManager.AppSettings["ClientBaseAddress"].ToString(), shortCode);
+
+            mockController.Setup(x => x.GetDecodedUrlAsString(expectedAPIEndpoint)).Returns("valid");
+
+            //mockController.
+            var result = mockController.Object.WithCallTo(x => x.RedirectWithCode(""));
+            Assert.AreEqual(result.ActionName, "RedirectWithCode", "The expected Action was not returned.");
+        }
+
+        //[TestMethod]
+        //public void RedirectWithinValidCode()
+        //{
+        //    // Arrange
+        //    var mockController = new Mock<HomeController>();
+        //    string shortCode = "1y5b";
+        //    string expectedAPIEndpoint = string.Format("{0}api/codec/{1}", ConfigurationManager.AppSettings["ClientBaseAddress"].ToString(), shortCode);
+
+        //    mockController.Setup(x => x.GetDecodedUrlAsString(expectedAPIEndpoint)).Returns("NotFound");
+
+        //    //mockController.
+        //    var result = mockController.Object.WithCallTo(x => x.RedirectWithCode("")).ShouldRedirectToRoute("NotFound");
+        //    //Assert.AreEqual(result.ActionName, "RedirectWithCode", "The expected Action was not returned.");
+        //}
+
+
+
     }
 }

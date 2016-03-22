@@ -18,6 +18,8 @@ namespace UrlMiniUITests.Steps
         [BeforeScenario]
         public void ScenarioSetup()
         {
+            ScenarioManagement.AddPreTestRecordCountToScenarioContext();
+
             //read desired browser from app.config
             string desiredBrowser = ConfigurationManager.AppSettings["desiredWebBrowser"].ToString();
 
@@ -43,6 +45,9 @@ namespace UrlMiniUITests.Steps
             //close webdriver session
             driver.Close();
             driver.Quit();
+
+            //cleanup database
+            ScenarioManagement.RemoveRecordsAddedToTheDatabase();
         }
 
         #region Given Statements
@@ -87,7 +92,11 @@ namespace UrlMiniUITests.Steps
             //retrieve values from Scenario Context
             IWebDriver driver = (IWebDriver)ScenarioContext.Current["DriverSession"];
 
+            Assert.IsFalse(DriverUtils.IsElementDisabled(driver, IndexView.ShortenUrlButton)
+                           , "The Shorten Url button is disabled when it should be clickable");
+            
             DriverUtils.ClickOnElement(driver, IndexView.ShortenUrlButton);
+            ScenarioContext.Current.Add("EntriesAdded", 1);
 
             Thread.Sleep(50);            
         }
@@ -148,7 +157,17 @@ namespace UrlMiniUITests.Steps
 
             string actualUrl = DriverUtils.GetCurrentUrl(driver);
 
-            Assert.AreEqual(desiredUrl, actualUrl, "The Short Link did now lead the user to the desired URL");          
+            //catch https redirect scenario
+            if (desiredUrl.Split(':').FirstOrDefault().ToLower() == "http"
+                && actualUrl.Split(':').FirstOrDefault().ToLower() == "https")
+            {
+                string newDesired = desiredUrl.Split(':').LastOrDefault().ToLower();
+                string newActual = actualUrl.Split(':').LastOrDefault().ToLower();
+                Assert.IsTrue(newActual.Contains(newDesired));
+            }
+            else {
+                Assert.AreEqual(desiredUrl.ToLower(), actualUrl.ToLower(), "The Short Link did not lead the user to the desired URL");
+            }
 
             
         }

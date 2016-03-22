@@ -13,8 +13,13 @@ Scenario Outline: The user obtains a short code when they submit a valid URL
 	Then Clicking the short-code link takes the user to the desired page
 	Examples: 
 	| url                                                                                                                      |
-	| https://home.stevenfarnell.net/<TIMESTAMP>                                                                               |
+	| https://home.stevenfarnell.net/                                                                                          |
+	| http://home.stevenfarnell.net/                                                                                           |
 	| https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&es_th=1&ie=UTF-8#q=test%20search%20terms%20<TIMESTAMP> |
+	| http://www.google.com                                                                                                    |
+	| HTTPS://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&es_th=1&ie=UTF-8#q=test%20search%20terms%20<TIMESTAMP> |
+	| HTTP://home.stevenfarnell.net                                                                                           |
+
 
 @HappyPath
 Scenario: The user is redirected to the desired page when they load the shortlink

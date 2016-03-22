@@ -13,7 +13,7 @@
         }
         function validateFields() {
             var validate = $("#LongUrl").val();
-            var regexPattern = /^(http|https?):\/\/[^ "]+$/;
+            var regexPattern = /^(http|https?):\/\/[^ "]+$/i;
 
             if (regexPattern.test(validate)) {
                 document.getElementById('btnShortenUrl').disabled = false;
